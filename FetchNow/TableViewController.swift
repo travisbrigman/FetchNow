@@ -54,11 +54,15 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let singleEvent = events[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SingleEvent", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SingleEvent", for: indexPath) as? EventTableViewCell else {
+            return UITableViewCell()
+        }
         
-        cell.textLabel?.text = singleEvent.title
-        cell.detailTextLabel?.text = singleEvent.venue.displayLocation
-        
+        cell.event.text = singleEvent.title
+        cell.location.text = singleEvent.venue.displayLocation
+        cell.date.text = singleEvent.dateTimeLocal
+        let imageURL = URL(string: singleEvent.performers[0].image ?? "no image found")
+        cell.fetchImage(imageURL)
         return cell
     }
      
@@ -101,8 +105,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         })
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 
-    
     
     
 

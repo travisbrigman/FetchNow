@@ -18,6 +18,7 @@
 		0FAA648B26AAFFF4005E0BF3 /* Favorties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA648A26AAFFF4005E0BF3 /* Favorties.swift */; };
 		0FAA648F26AB141C005E0BF3 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA648E26AB141C005E0BF3 /* Provider.swift */; };
 		0FAA649226AB15B0005E0BF3 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA649126AB15B0005E0BF3 /* ErrorMessage.swift */; };
+		0FAA649A26AB2583005E0BF3 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA649926AB2583005E0BF3 /* EventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0FAA648A26AAFFF4005E0BF3 /* Favorties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorties.swift; sourceTree = "<group>"; };
 		0FAA648E26AB141C005E0BF3 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		0FAA649126AB15B0005E0BF3 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		0FAA649926AB2583005E0BF3 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				0F285F9026A9BC9F000C58C3 /* AppDelegate.swift */,
 				0F285FA526A9BDB5000C58C3 /* Event.swift */,
 				0FAA647226A9CBC4005E0BF3 /* TableViewController.swift */,
+				0FAA649926AB2583005E0BF3 /* EventTableViewCell.swift */,
 				0FAA648E26AB141C005E0BF3 /* Provider.swift */,
 				0F285F9226A9BC9F000C58C3 /* SceneDelegate.swift */,
 				0F285F9626A9BC9F000C58C3 /* Main.storyboard */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FAA649A26AB2583005E0BF3 /* EventTableViewCell.swift in Sources */,
 				0F285FA626A9BDB5000C58C3 /* Event.swift in Sources */,
 				0FAA648B26AAFFF4005E0BF3 /* Favorties.swift in Sources */,
 				0FAA648F26AB141C005E0BF3 /* Provider.swift in Sources */,
