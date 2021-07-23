@@ -9,6 +9,8 @@ import UIKit
 
 class TableViewController: UITableViewController, UISearchBarDelegate {
     
+    let dataProvider = Provider()
+    
     var events = [Event]()
     var filteredEvents = [Event]()
     
@@ -17,33 +19,29 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-
         
-        let urlString: String
-        urlString = "https://api.seatgeek.com/2/events?client_id=MjI2MjA3NTR8MTYyNjk2MTc5Ny41OTgwMTI"
-        
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                parse(json: data)
-                return
+        dataProvider.getResults(query: "") { [weak self] result in
+            switch result {
+            case .success(let results):
+                self?.events = results.events
+                self?.filteredEvents = self!.events
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+                
+                
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    let ac = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(ac, animated: true)
+                }
+                print(error)
             }
         }
     }
-    
-    
-    func parse(json: Data) {
-        do {
-            let jsonDecoder = JSONDecoder()
-            let decodedResponse = try jsonDecoder.decode(Welcome.self, from: json)
-            events = decodedResponse.events
-            filteredEvents = events
-            tableView.reloadData()
-        } catch {
-            print(error)
-        }
-        
-    }
-    
+
     
     // MARK: - Table view data source
     
@@ -77,23 +75,26 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         filteredEvents = []
-        
-        if searchText == "" {
-            filteredEvents = events
-        } else {
-            let urlString =  "https://api.seatgeek.com/2/events?q=\(searchText.replacingOccurrences(of: " ", with: "+"))&client_id=MjI2MjA3NTR8MTYyNjk2MTc5Ny41OTgwMTI"
-            
-            if let url = URL(string: urlString) {
-                if let data = try? Data(contentsOf: url) {
-                    parse(json: data)
-                    return
+
+        dataProvider.getResults(query: searchText) { [weak self] result in
+            switch result {
+            case .success(let results):
+                self?.events = results.events
+                self?.filteredEvents = self!.events
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
                 }
+                
+                
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    let ac = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(ac, animated: true)
+                }
+                print(error)
             }
-            filteredEvents = events
-        }
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
         }
     }
     
