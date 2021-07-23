@@ -72,11 +72,13 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    var timer = Timer()
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        timer.invalidate()
         
         filteredEvents = []
-
-        dataProvider.getResults(query: searchText) { [weak self] result in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
+            self.dataProvider.getResults(query: searchText) { [weak self] result in
             switch result {
             case .success(let results):
                 self?.events = results.events
@@ -96,6 +98,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
                 print(error)
             }
         }
+        })
     }
     
 
