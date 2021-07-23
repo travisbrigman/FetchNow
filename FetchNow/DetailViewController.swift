@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
         
         guard let detailItem = detailItem else { return }
         
-        title = detailItem.title
+        title = detailItem.shortTitle
         
         navigationItem.rightBarButtonItem = barButtonItem(isFavorited: favorites.contains(detailItem))
         
