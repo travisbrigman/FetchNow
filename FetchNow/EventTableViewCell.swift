@@ -13,6 +13,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var favoriteIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +31,8 @@ class EventTableViewCell: UITableViewCell {
                 DispatchQueue.main.async {
                     let image = UIImage(data: imageData)
                     self.eventImage.image = image
-                    self.eventImage.contentMode = .scaleAspectFit
+                    self.eventImage.contentMode = .scaleAspectFill
+                    self.eventImage.clipsToBounds = true
 
                 }
             }catch{

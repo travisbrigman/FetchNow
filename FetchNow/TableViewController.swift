@@ -8,13 +8,14 @@
 import UIKit
 
 class TableViewController: UITableViewController, UISearchBarDelegate {
-    
+    let favorites = Favorites()
     let dataProvider = Provider()
     
     var events = [Event]()
     var filteredEvents = [Event]()
     
     @IBOutlet var searchBar: UISearchBar!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         cell.date.text = singleEvent.dateTimeLocal
         let imageURL = URL(string: singleEvent.performers[0].image ?? "no image found")
         cell.fetchImage(imageURL)
+        
+        if favorites.contains(singleEvent) {
+            cell.favoriteIcon.image = UIImage(named: "heartFilled.png")
+        }
         return cell
     }
      
