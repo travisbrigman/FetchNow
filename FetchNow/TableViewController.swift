@@ -20,6 +20,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "SingleEvent")
         
         dataProvider.getResults(query: "") { [weak self] result in
             switch result {
@@ -58,16 +59,8 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SingleEvent", for: indexPath) as? EventTableViewCell else {
             return UITableViewCell()
         }
+        cell.event = singleEvent
         
-        cell.event.text = singleEvent.title
-        cell.location.text = singleEvent.venue.displayLocation
-        cell.date.text = singleEvent.dateTimeLocal
-        let imageURL = URL(string: singleEvent.performers[0].image ?? "no image found")
-        cell.fetchImage(imageURL)
-        
-        if favorites.contains(singleEvent) {
-            cell.favoriteIcon.image = UIImage(named: "heartFilled.png")
-        }
         return cell
     }
      
@@ -113,23 +106,4 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-
-    
-    
-
-    
-
-    
-
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
