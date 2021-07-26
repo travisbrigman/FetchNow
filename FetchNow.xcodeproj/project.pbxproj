@@ -15,7 +15,7 @@
 		0F285FA626A9BDB5000C58C3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F285FA526A9BDB5000C58C3 /* Event.swift */; };
 		0FAA647326A9CBC4005E0BF3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA647226A9CBC4005E0BF3 /* TableViewController.swift */; };
 		0FAA647D26A9EA4C005E0BF3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA647C26A9EA4C005E0BF3 /* DetailViewController.swift */; };
-		0FAA648B26AAFFF4005E0BF3 /* Favorties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA648A26AAFFF4005E0BF3 /* Favorties.swift */; };
+		0FAA648B26AAFFF4005E0BF3 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA648A26AAFFF4005E0BF3 /* Favorites.swift */; };
 		0FAA648F26AB141C005E0BF3 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA648E26AB141C005E0BF3 /* Provider.swift */; };
 		0FAA649226AB15B0005E0BF3 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA649126AB15B0005E0BF3 /* ErrorMessage.swift */; };
 		0FAA649A26AB2583005E0BF3 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA649926AB2583005E0BF3 /* EventTableViewCell.swift */; };
@@ -44,7 +44,7 @@
 		0F285FA526A9BDB5000C58C3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0FAA647226A9CBC4005E0BF3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		0FAA647C26A9EA4C005E0BF3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		0FAA648A26AAFFF4005E0BF3 /* Favorties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorties.swift; sourceTree = "<group>"; };
+		0FAA648A26AAFFF4005E0BF3 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		0FAA648E26AB141C005E0BF3 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		0FAA649126AB15B0005E0BF3 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		0FAA649926AB2583005E0BF3 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		0F285F8F26A9BC9F000C58C3 /* FetchNow */ = {
 			isa = PBXGroup;
 			children = (
-				0FAA648A26AAFFF4005E0BF3 /* Favorties.swift */,
+				0FAA648A26AAFFF4005E0BF3 /* Favorites.swift */,
 				0F285F9026A9BC9F000C58C3 /* AppDelegate.swift */,
 				0F285FA526A9BDB5000C58C3 /* Event.swift */,
 				0FAA647226A9CBC4005E0BF3 /* TableViewController.swift */,
@@ -224,7 +224,7 @@
 			files = (
 				0FAA649A26AB2583005E0BF3 /* EventTableViewCell.swift in Sources */,
 				0F285FA626A9BDB5000C58C3 /* Event.swift in Sources */,
-				0FAA648B26AAFFF4005E0BF3 /* Favorties.swift in Sources */,
+				0FAA648B26AAFFF4005E0BF3 /* Favorites.swift in Sources */,
 				0FAA648F26AB141C005E0BF3 /* Provider.swift in Sources */,
 				0F285F9126A9BC9F000C58C3 /* AppDelegate.swift in Sources */,
 				0FAA649226AB15B0005E0BF3 /* ErrorMessage.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  Favorties.swift
+//  Favorites.swift
 //  FetchNow
 //
 //  Created by Travis Brigman on 7/23/21.
