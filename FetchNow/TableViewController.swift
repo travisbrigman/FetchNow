@@ -61,6 +61,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         }
         cell.event = singleEvent
         
+        if favorites.contains(singleEvent){
+            cell.showFavoriteIcon()
+        }
+        
         return cell
     }
      

@@ -8,7 +8,6 @@
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
-    let favorites = Favorites()
     
     var event: Event? {
         didSet {
@@ -58,21 +57,22 @@ class EventTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    func showFavoriteIcon() {
+        addSubview(favoriteIcon)
+        favoriteIcon.anchor(top: topAnchor, left: eventImage.rightAnchor, bottom: nil, right: nil, paddingTop: 1, paddingLeft: 1, paddingBottom: 1, paddingRight: 1, width: 20, height: 20, enableInsets: false)
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(eventNameLabel)
         addSubview(location)
         addSubview(date)
         addSubview(eventImage)
-//        if favorites.contains(event) {
-//            addSubview(favoriteIcon)
-//        }
-        
+
         eventImage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 80, height: 0, enableInsets: false)
         eventNameLabel.anchor(top: topAnchor, left: eventImage.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 2, width: frame.size.width, height: 0, enableInsets: false)
         location.anchor(top: eventNameLabel.bottomAnchor, left: eventImage.rightAnchor, bottom: nil, right: nil, paddingTop: 2, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
         date.anchor(top: location.bottomAnchor, left: eventImage.rightAnchor, bottom: nil, right: nil, paddingTop: 2, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: frame.size.width, height: 0, enableInsets: false)
-//        favoriteIcon.anchor(top: topAnchor, left: date.rightAnchor, bottom: nil, right: nil, paddingTop: 1, paddingLeft: 1, paddingBottom: 1, paddingRight: 1, width: 20, height: 20, enableInsets: false)
         
     }
     

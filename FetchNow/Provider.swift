@@ -39,7 +39,11 @@ class Provider {
             }
             
             do {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                //2021-07-23T03:30:00
                 let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(formatter)
                 let results = try decoder.decode(Welcome.self, from: data)
                 completed(.success(results))
                 
