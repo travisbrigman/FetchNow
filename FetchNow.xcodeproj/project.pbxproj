@@ -20,7 +20,18 @@
 		0FAA649226AB15B0005E0BF3 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA649126AB15B0005E0BF3 /* ErrorMessage.swift */; };
 		0FAA649A26AB2583005E0BF3 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA649926AB2583005E0BF3 /* EventTableViewCell.swift */; };
 		0FAA64A526ACF539005E0BF3 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA64A426ACF539005E0BF3 /* ExtensionView.swift */; };
+		0FAA64B626AE67B4005E0BF3 /* FetchNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA64B526AE67B4005E0BF3 /* FetchNowTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FAA64B826AE67B4005E0BF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F285F8526A9BC9F000C58C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F285F8C26A9BC9F000C58C3;
+			remoteInfo = FetchNow;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0F285F8D26A9BC9F000C58C3 /* FetchNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,10 +49,20 @@
 		0FAA649126AB15B0005E0BF3 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		0FAA649926AB2583005E0BF3 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		0FAA64A426ACF539005E0BF3 /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
+		0FAA64B326AE67B4005E0BF3 /* FetchNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FAA64B526AE67B4005E0BF3 /* FetchNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNowTests.swift; sourceTree = "<group>"; };
+		0FAA64B726AE67B4005E0BF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0F285F8A26A9BC9F000C58C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FAA64B026AE67B4005E0BF3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				0F285F8F26A9BC9F000C58C3 /* FetchNow */,
+				0FAA64B426AE67B4005E0BF3 /* FetchNowTests */,
 				0F285F8E26A9BC9F000C58C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0F285F8D26A9BC9F000C58C3 /* FetchNow.app */,
+				0FAA64B326AE67B4005E0BF3 /* FetchNowTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +111,15 @@
 			path = FetchNow;
 			sourceTree = "<group>";
 		};
+		0FAA64B426AE67B4005E0BF3 /* FetchNowTests */ = {
+			isa = PBXGroup;
+			children = (
+				0FAA64B526AE67B4005E0BF3 /* FetchNowTests.swift */,
+				0FAA64B726AE67B4005E0BF3 /* Info.plist */,
+			);
+			path = FetchNowTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,6 +140,24 @@
 			productReference = 0F285F8D26A9BC9F000C58C3 /* FetchNow.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0FAA64B226AE67B4005E0BF3 /* FetchNowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FAA64BA26AE67B4005E0BF3 /* Build configuration list for PBXNativeTarget "FetchNowTests" */;
+			buildPhases = (
+				0FAA64AF26AE67B4005E0BF3 /* Sources */,
+				0FAA64B026AE67B4005E0BF3 /* Frameworks */,
+				0FAA64B126AE67B4005E0BF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FAA64B926AE67B4005E0BF3 /* PBXTargetDependency */,
+			);
+			name = FetchNowTests;
+			productName = FetchNowTests;
+			productReference = 0FAA64B326AE67B4005E0BF3 /* FetchNowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -119,6 +169,10 @@
 				TargetAttributes = {
 					0F285F8C26A9BC9F000C58C3 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					0FAA64B226AE67B4005E0BF3 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 0F285F8C26A9BC9F000C58C3;
 					};
 				};
 			};
@@ -136,6 +190,7 @@
 			projectRoot = "";
 			targets = (
 				0F285F8C26A9BC9F000C58C3 /* FetchNow */,
+				0FAA64B226AE67B4005E0BF3 /* FetchNowTests */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +203,13 @@
 				0F285F9D26A9BCA0000C58C3 /* LaunchScreen.storyboard in Resources */,
 				0F285F9A26A9BCA0000C58C3 /* Assets.xcassets in Resources */,
 				0F285F9826A9BC9F000C58C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FAA64B126AE67B4005E0BF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +233,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FAA64AF26AE67B4005E0BF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FAA64B626AE67B4005E0BF3 /* FetchNowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FAA64B926AE67B4005E0BF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F285F8C26A9BC9F000C58C3 /* FetchNow */;
+			targetProxy = 0FAA64B826AE67B4005E0BF3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0F285F9626A9BC9F000C58C3 /* Main.storyboard */ = {
@@ -244,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -299,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -347,6 +425,48 @@
 			};
 			name = Release;
 		};
+		0FAA64BB26AE67B4005E0BF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73X37M5BQV;
+				INFOPLIST_FILE = FetchNowTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.travisbrigman.FetchNowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchNow.app/FetchNow";
+			};
+			name = Debug;
+		};
+		0FAA64BC26AE67B4005E0BF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73X37M5BQV;
+				INFOPLIST_FILE = FetchNowTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.travisbrigman.FetchNowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchNow.app/FetchNow";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -364,6 +484,15 @@
 			buildConfigurations = (
 				0F285FA226A9BCA0000C58C3 /* Debug */,
 				0F285FA326A9BCA0000C58C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FAA64BA26AE67B4005E0BF3 /* Build configuration list for PBXNativeTarget "FetchNowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FAA64BB26AE67B4005E0BF3 /* Debug */,
+				0FAA64BC26AE67B4005E0BF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

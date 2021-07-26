@@ -16,7 +16,6 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -43,7 +42,6 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
     }
-
     
     // MARK: - Table view data source
     
@@ -69,11 +67,8 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     }
      
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 1: try loading the "Detail" view controller and typecasting it to be DetailViewController
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            // 2: success! Set its properties
             vc.detailItem = events[indexPath.row]
-            // 3: now push it onto the navigation controller
             navigationController?.pushViewController(vc, animated: true)
         }
     }

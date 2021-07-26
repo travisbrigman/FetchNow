@@ -53,39 +53,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAC-Ur-5sp">
-                                <rect key="frame" x="20" y="144" width="367" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yax-4Q-8g9">
-                                <rect key="frame" x="20" y="182" width="367" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOp-xw-4b6">
-                                <rect key="frame" x="16" y="211" width="343" height="410"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="U8t-fp-9LL">
+                                <rect key="frame" x="16" y="115" width="343" height="504.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2t-cK-4Sw">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAC-Ur-5sp">
+                                        <rect key="frame" x="0.0" y="35" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yax-4Q-8g9">
+                                        <rect key="frame" x="0.0" y="66.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOp-xw-4b6">
+                                        <rect key="frame" x="0.0" y="98" width="343" height="406.5"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0uS-Ze-dtT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yax-4Q-8g9" firstAttribute="top" secondItem="VAC-Ur-5sp" secondAttribute="bottom" constant="17" id="5dR-HX-0qb"/>
-                            <constraint firstItem="VAC-Ur-5sp" firstAttribute="leading" secondItem="0uS-Ze-dtT" secondAttribute="leading" constant="20" id="90M-Im-h57"/>
-                            <constraint firstItem="mOp-xw-4b6" firstAttribute="leading" secondItem="gA3-yJ-M9S" secondAttribute="leadingMargin" id="DRY-V6-bAi"/>
-                            <constraint firstItem="VAC-Ur-5sp" firstAttribute="leading" secondItem="yax-4Q-8g9" secondAttribute="leading" id="EvH-ig-pqj"/>
-                            <constraint firstItem="VAC-Ur-5sp" firstAttribute="trailing" secondItem="yax-4Q-8g9" secondAttribute="trailing" id="QX3-Dj-ATz"/>
-                            <constraint firstItem="mOp-xw-4b6" firstAttribute="trailing" secondItem="gA3-yJ-M9S" secondAttribute="trailingMargin" id="mfx-SD-Vnm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VAC-Ur-5sp" secondAttribute="trailing" constant="-28" id="rGT-JN-qlB"/>
-                            <constraint firstItem="0uS-Ze-dtT" firstAttribute="bottom" secondItem="mOp-xw-4b6" secondAttribute="bottom" constant="46" id="y2k-Aa-K01"/>
-                            <constraint firstItem="mOp-xw-4b6" firstAttribute="top" secondItem="yax-4Q-8g9" secondAttribute="bottom" constant="8" id="yf8-jk-OR0"/>
-                            <constraint firstItem="VAC-Ur-5sp" firstAttribute="top" secondItem="0uS-Ze-dtT" secondAttribute="top" constant="144" id="z55-cm-6ow"/>
+                            <constraint firstItem="0uS-Ze-dtT" firstAttribute="bottom" secondItem="U8t-fp-9LL" secondAttribute="bottom" constant="47.5" id="7ma-7d-XAc"/>
+                            <constraint firstItem="U8t-fp-9LL" firstAttribute="top" secondItem="0uS-Ze-dtT" secondAttribute="top" constant="115" id="ED2-zG-Hef"/>
+                            <constraint firstItem="U8t-fp-9LL" firstAttribute="leading" secondItem="gA3-yJ-M9S" secondAttribute="leadingMargin" id="q9g-i7-M9t"/>
+                            <constraint firstItem="U8t-fp-9LL" firstAttribute="trailing" secondItem="gA3-yJ-M9S" secondAttribute="trailingMargin" id="wuf-kf-NJm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="date" destination="VAC-Ur-5sp" id="hEJ-Mk-wiz"/>
+                        <outlet property="event" destination="l2t-cK-4Sw" id="MEr-gD-GAj"/>
                         <outlet property="imageView" destination="mOp-xw-4b6" id="Dtl-aR-Yre"/>
                         <outlet property="location" destination="yax-4Q-8g9" id="nb2-fu-UbH"/>
                     </connections>

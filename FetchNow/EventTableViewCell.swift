@@ -13,12 +13,13 @@ class EventTableViewCell: UITableViewCell {
         didSet {
             eventNameLabel.text = event?.title
             location.text = event?.venue.displayLocation
-            date.text = event?.dateTimeLocal
+            date =  event?.dateTimeLocal ?? Date()
+            dateString.text = formatter.string(from: date)
             eventImage.image = fetchImage(photoURL: event?.performers[0].image)
         }
     }
     
-    private let eventNameLabel : UILabel = {
+    private let eventNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -35,7 +36,19 @@ class EventTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let date: UILabel = {
+    private var date: Date = {
+        let date = Date()
+        return date
+    }()
+    
+    private let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
+    private let dateString: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 13)
@@ -59,21 +72,20 @@ class EventTableViewCell: UITableViewCell {
     
     func showFavoriteIcon() {
         addSubview(favoriteIcon)
-        favoriteIcon.anchor(top: topAnchor, left: eventImage.rightAnchor, bottom: nil, right: nil, paddingTop: 1, paddingLeft: 1, paddingBottom: 1, paddingRight: 1, width: 20, height: 20, enableInsets: false)
+        favoriteIcon.anchor(top: nil, left: dateString.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 1, paddingLeft: 1, paddingBottom: 1, paddingRight: 5, width: 20, height: frame.size.height, enableInsets: false)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(eventNameLabel)
         addSubview(location)
-        addSubview(date)
+        addSubview(dateString)
         addSubview(eventImage)
 
         eventImage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 80, height: 0, enableInsets: false)
         eventNameLabel.anchor(top: topAnchor, left: eventImage.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 2, width: frame.size.width, height: 0, enableInsets: false)
         location.anchor(top: eventNameLabel.bottomAnchor, left: eventImage.rightAnchor, bottom: nil, right: nil, paddingTop: 2, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
-        date.anchor(top: location.bottomAnchor, left: eventImage.rightAnchor, bottom: nil, right: nil, paddingTop: 2, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: frame.size.width, height: 0, enableInsets: false)
-        
+        dateString.anchor(top: location.bottomAnchor, left: eventImage.rightAnchor, bottom: nil, right: nil, paddingTop: 2, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: frame.size.width, height: 0, enableInsets: false)
     }
     
     required init?(coder aDecoder: NSCoder) {
