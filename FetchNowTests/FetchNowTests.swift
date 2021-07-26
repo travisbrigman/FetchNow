@@ -11,7 +11,6 @@ import XCTest
 class FetchNowTests: XCTestCase {
 
     let favorites = Favorites()
-    let tvc = TableViewController()
     
     func testFavoritesAdd() throws {
         let location = Location(lat: 36.17, lon: -86.76)
