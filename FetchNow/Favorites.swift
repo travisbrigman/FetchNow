@@ -16,12 +16,12 @@ class Favorites {
     
     init() {
         
-            if let data = UserDefaults.standard.data(forKey: saveKey) {
-                if let decoded = try? JSONDecoder().decode(Set<Int>.self, from: data) {
-                    self.favoriteEvents = decoded
-                    return
-                }
+        if let data = UserDefaults.standard.data(forKey: saveKey) {
+            if let decoded = try? JSONDecoder().decode(Set<Int>.self, from: data) {
+                self.favoriteEvents = decoded
+                return
             }
+        }
         
         self.favoriteEvents = []
     }
