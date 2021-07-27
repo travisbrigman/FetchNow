@@ -12,6 +12,8 @@ class Favorites {
     
     private let saveKey = "Favorites"
     
+    static let shared = Favorites()
+    
     init() {
         
             if let data = UserDefaults.standard.data(forKey: saveKey) {
@@ -25,7 +27,8 @@ class Favorites {
     }
     
     func contains(_ event: Event) -> Bool {
-        favoriteEvents.contains(event.id)
+        decode()
+        return favoriteEvents.contains(event.id)
     }
     
     func add(_ event: Event) {
@@ -41,6 +44,15 @@ class Favorites {
     func save() {
         if let data = try? JSONEncoder().encode(favoriteEvents) {
             UserDefaults.standard.set(data, forKey: saveKey)
+        }
+    }
+    
+    func decode() {
+        if let data = UserDefaults.standard.data(forKey: saveKey) {
+            if let decoded = try? JSONDecoder().decode(Set<Int>.self, from: data) {
+                self.favoriteEvents = decoded
+                return
+            }
         }
     }
 }

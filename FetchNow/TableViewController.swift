@@ -8,17 +8,17 @@
 import UIKit
 
 class TableViewController: UITableViewController, UISearchBarDelegate {
-    let favorites = Favorites()
     let dataProvider = Provider()
     
     var events = [Event]()
     var filteredEvents = [Event]()
     
-    @IBOutlet var searchBar: UISearchBar!
+    lazy var searchBar: UISearchBar = UISearchBar()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        searchBar.delegate = self
+        buildSearchBar()
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "SingleEvent")
         
         dataProvider.getResults(query: "") { [weak self] result in
@@ -43,6 +43,22 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    func buildSearchBar() {
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+    }
+    
+    func reload() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,9 +74,18 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
             return UITableViewCell()
         }
         cell.event = singleEvent
-        
-        if favorites.contains(singleEvent){
-            cell.showFavoriteIcon()
+        if Favorites.shared.contains(singleEvent){
+            DispatchQueue.main.async {
+                cell.showFavoriteIcon()
+                self.reload()
+            }
+            
+        } else {
+            DispatchQueue.main.async {
+                cell.removeFavoriteIcon()
+                self.reload()
+            }
+            
         }
         
         return cell

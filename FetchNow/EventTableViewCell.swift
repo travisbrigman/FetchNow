@@ -75,6 +75,12 @@ class EventTableViewCell: UITableViewCell {
         favoriteIcon.anchor(top: nil, left: dateString.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 1, paddingLeft: 1, paddingBottom: 1, paddingRight: 5, width: 20, height: frame.size.height, enableInsets: false)
     }
     
+    func removeFavoriteIcon() {
+        if !favoriteIcon.isHidden {
+            favoriteIcon.removeFromSuperview()
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(eventNameLabel)

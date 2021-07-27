@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    var favorites = Favorites()
+//    var favorites = Favorites()
     var tableView = TableViewController()
     var detailItem: Event?
     
@@ -31,7 +31,7 @@ class DetailViewController: UIViewController {
         
         title = detailItem.shortTitle
         
-        navigationItem.rightBarButtonItem = barButtonItem(isFavorited: favorites.contains(detailItem))
+        navigationItem.rightBarButtonItem = barButtonItem(isFavorited: Favorites.shared.contains(detailItem))
         
         event.text = detailItem.title
         date.text = formatter.string(from: detailItem.dateTimeLocal)
@@ -74,17 +74,18 @@ class DetailViewController: UIViewController {
 
         var message = ""
         
-        if !favorites.contains(detailItem) {
-            favorites.add(detailItem)
+        if !Favorites.shared.contains(detailItem) {
+            Favorites.shared.add(detailItem)
             message = "you favorited this event"
         } else {
-            favorites.remove(detailItem)
+            Favorites.shared.remove(detailItem)
             message = "you un-favorited this event"
         }
         let ac = UIAlertController(title: "Favorite", message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: .none))
         present(ac, animated: true)
         
-        navigationItem.rightBarButtonItem = barButtonItem(isFavorited: favorites.contains(detailItem))
+        navigationItem.rightBarButtonItem = barButtonItem(isFavorited: Favorites.shared.contains(detailItem))
+        tableView.reload()
     }
 }
