@@ -8,12 +8,11 @@
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
-    
     var event: Event? {
         didSet {
             eventNameLabel.text = event?.title
             location.text = event?.venue.displayLocation
-            date =  event?.dateTimeLocal ?? Date()
+            date = event?.dateTimeLocal ?? Date()
             dateString.text = formatter.string(from: date)
             eventImage.image = fetchImage(photoURL: event?.performers[0].image)
         }
@@ -56,15 +55,15 @@ class EventTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let eventImage : UIImageView = {
+    private let eventImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
     }()
     
-    private let favoriteIcon : UIImageView = {
-        let imageView = UIImageView(image: (#imageLiteral(resourceName: "heartFilled")))
+    private let favoriteIcon: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "heartFilled"))
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
@@ -98,9 +97,7 @@ class EventTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    
     func fetchImage(photoURL: String?) -> UIImage {
-        
         guard let imageURL = URL(string: photoURL ?? "no URL found") else { return
             UIImage()
         }
